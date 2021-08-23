@@ -74,21 +74,11 @@ pacstrap -i /mnt base
 
 arch-chroot /mnt
 
-pacman -S linux linux-headers linux-firmware
-
-pacman -S nano neofetch htop
-
-pacman -S base-devel openssh
+pacman -S linux linux-headers linux-firmware nano neofetch htop base-devel openssh vim networkmanager wpa_supplicant wireless_tools netctl dialog lvm2
 
 systemctl enable sshd
 
-pacman -S networkmanager wpa_supplicant wireless_tools netctl
-
-pacman -S dialog 
-
 systemctl enable NetworkManager
-
-pacman -S lvm2
 
 nano /etc/mkinitcpio.conf       --check for HOOKS-> add lvm2 in between block and filesystem
 
@@ -173,13 +163,7 @@ hostnamectl
 nmcli device wifi list
 nmcli device wifi connect *****_5GHz password *******
 
-pacman -S intel-ucode
-
-pacman -S xorg-server
-
-pacman -S mesa nvidia nvidia-utils nvidia-settings
-
-
+pacman -S intel-ucode xorg-server mesa nvidia nvidia-utils nvidia-settings
 
 #installing desktop env
 pacman -S plasma-meta kde-application
