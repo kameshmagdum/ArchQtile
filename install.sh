@@ -43,3 +43,5 @@ betterlockscreen -u ~/.config/qtile/forest.jpg --fx dim,pixel
 rm -rf ~/.bashrc
 cp -r home/* ~/.
 chmod +x ~/automation/*
+
+sudo reboot
