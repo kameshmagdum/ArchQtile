@@ -11,19 +11,19 @@ cd ..
 sudo rm -rf temp
 
 #updating using paru
-paru
+paru --noconfirm
 
 #installing apps
-paru -S neofetch timeshift thunar stacer firefox picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen
+paru -S neofetch timeshift thunar stacer firefox picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
 
 #installing fonts
-paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu
+paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu --noconfirm
 
 #installing icons and themes
-paru -S papirus-icon-theme arc-gtk-theme
+paru -S papirus-icon-theme arc-gtk-theme --noconfirm
 
 #installing bluetooth
-paru -S bluez blueman
+paru -S bluez blueman --noconfirm
 sudo systemctl enable bluetooth.service
 
 #cleanup
