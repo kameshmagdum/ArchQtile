@@ -5,6 +5,6 @@
 sudo pacman -Scc
 sudo pacman -Rns $(pacman -Qtdq)
 rm -rf ~/.cache/*
-yay
+paru
 echo "System update done..."
 sleep 10
