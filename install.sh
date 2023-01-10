@@ -14,7 +14,7 @@ sudo rm -rf temp
 yay
 
 #installing apps
-yay -S neofetch timeshift thunar google-chrome visual-studio-code-bin github-desktop-bin picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen
+yay -S neofetch timeshift thunar stacer firefox picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen
 
 #installing fonts
 yay -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu
@@ -26,10 +26,19 @@ yay -S papirus-icon-theme arc-gtk-theme
 yay -S bluez blueman
 sudo systemctl enable bluetooth.service
 
-cp -r home/* ~/.
-cp -r configs/* ~/.config
+#cleanup
+sudo pacman -Scc
+sudo pacman -Rns $(pacman -Qtdq)
+rm -rf ~/.cache/*
 
+#coping concigs
+cp -r configs/* ~/.config
+chmod +x ~/.config/qtile/autostart.sh
+
+#setting lockscreen
 betterlockscreen -u ~/.config/qtile/forest.jpg --fx dim,pixel
 
-chmod +x ~/.config/qtile/autostart.sh
+#copying other files
+rm -rf ~/.bashrc
+cp -r home/* ~/.
 chmod +x ~/automation/*

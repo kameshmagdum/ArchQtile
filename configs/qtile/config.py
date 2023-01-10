@@ -74,10 +74,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod, "shift"], "a", lazy.spawn("rofi -show drun -show-icons")),
-    Key([mod, "shift"], "c", lazy.spawn("google-chrome-stable")),
-    Key([mod, "shift"], "v", lazy.spawn("code")),
-    Key([mod, "shift"], "g", lazy.spawn("github-desktop")),
-    Key([mod, "shift"], "f", lazy.spawn("thunar")),
+    Key([mod, "shift"], "f", lazy.spawn("firefox")),
+    Key([mod, "shift"], "e", lazy.spawn("thunar")),
     Key([mod], "z", lazy.spawn("betterlockscreen -l dim")),
 
     #=-/ Multimedia keys /-=#
@@ -136,6 +134,7 @@ groups.append(ScratchPad("scratchpad", [
     DropDown("exitmenu","alacritty -e /home/kamesh/automation/logout.sh", width=0.15, height=0.20, x=0.425, y=0.35, opacity=1),
     DropDown("update","alacritty -e /home/kamesh/automation/updateSystem.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("rsync","alacritty -e /home/kamesh/automation/rsync.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
+    DropDown("betterlock","alacritty -e /home/kamesh/automation/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("htop","alacritty -e htop", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1)
 ]))
 
@@ -144,8 +143,9 @@ keys.extend([
     Key([mod], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key([mod], "x", lazy.group['scratchpad'].dropdown_toggle('exitmenu')),
     Key([mod], "u", lazy.group['scratchpad'].dropdown_toggle('update')),
-    Key([mod], "o", lazy.group['scratchpad'].dropdown_toggle('rsync')),
-    Key([mod], "r", lazy.group['scratchpad'].dropdown_toggle('htop'))
+    Key([mod], "r", lazy.group['scratchpad'].dropdown_toggle('rsync')),
+    Key([mod, "shift"], "z", lazy.group['scratchpad'].dropdown_toggle('betterlock')),
+    Key([mod], "t", lazy.group['scratchpad'].dropdown_toggle('htop'))
 ])
 
 
