@@ -26,7 +26,10 @@ yay -S papirus-icon-theme arc-gtk-theme
 yay -S bluez blueman
 sudo systemctl enable bluetooth.service
 
-cp -r home/* .
+cp -r home/* ~/.
 cp -r configs/* ~/.config
 
 betterlockscreen -u ~/.config/qtile/forest.jpg --fx dim,pixel
+
+chmod +x ~/.config/qtile/autostart.sh
+chmod +x ~/automation/*
