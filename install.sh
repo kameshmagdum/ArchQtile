@@ -68,4 +68,7 @@ chmod +x ~/automation/*
 mkdir ~/OnePlace
 mkdir ~/OnePlace/Music
 
+#copying touchpad configs
+sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
 sudo reboot
