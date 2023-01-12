@@ -1,15 +1,17 @@
 #!/bin/bash
-onePlacePath="~/OnePlace"
 
 echo "rsync starting..."
-rsync -avh ~/.config/qtile $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/rofi $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/Thunar $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/xfce4 $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/neofetch $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/mpd $onePlacePath/dotfiles --delete
-rsync -avh ~/.config/alacritty $onePlacePath/dotfiles --delete
-cp ~/.bashrc $onePlacePath/dotfiles/.bashrc
+rsync -avh ~/.config/qtile ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/rofi ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/Thunar ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/xfce4 ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/neofetch ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/mpd ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/alacritty ~/OnePlace/dotfiles --delete
+rsync -avh ~/automation ~/OnePlace/dotfiles --delete
+
+cp ~/.bashrc ~/OnePlace/dotfiles/.bashrc
 
 date
+sleep 5
 echo "rsync finished..."
