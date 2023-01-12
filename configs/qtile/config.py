@@ -73,9 +73,13 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "a", lazy.spawn("rofi -show drun -show-icons")),
+    Key([mod, "shift"], "a", lazy.spawn("/home/kamesh/.config/rofi/launchers/type-1/launcher.sh")),
     Key([mod, "shift"], "f", lazy.spawn("firefox")),
     Key([mod, "shift"], "e", lazy.spawn("thunar")),
+    Key([mod, "shift"], "b", lazy.spawn("brave")),
+    Key([mod, "shift"], "c", lazy.spawn("google-chrome-stable")),
+    Key([mod, "shift"], "v", lazy.spawn("code")),
+    Key([mod, "shift"], "g", lazy.spawn("github-desktop")),
     Key([mod], "z", lazy.spawn("betterlockscreen -l dim")),
 
     #=-/ Multimedia keys /-=#
@@ -123,7 +127,7 @@ colors = [["#282c34", "#282c34"],  #background (dark grey) [0]
 			   ['#ff6c6b', '#ff6c6b'],  #red [9]
 			   ["#ecbe7b", "#ecbe7b"]]  #yellow [10]
 			   
-backgroundColor = "#282a36"
+backgroundColor = "#1E2029"
 foregroundColor = "#bbc2cf"
 workspaceColor = "#51afef"
 foregroundColorTwo = "#44475a"
@@ -150,9 +154,9 @@ keys.extend([
 
 
 layout_theme = {
-        "margin":8,
+        "margin":5,
         "border_width": 2,
-        "border_focus": colors[1],
+        "border_focus": "#1E4C33",
         "border_normal": backgroundColor
     }
 
@@ -195,7 +199,7 @@ screens = [
                     padding = 10
                 ),
                 widget.TextBox(
-                    text = "",
+                    text = " ",
                     fontsize = 18,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[3],
@@ -381,10 +385,10 @@ screens = [
                 ),
 
             ],
-            size=32,
+            size=30,
             background=backgroundColor,
             margin=5, 
-            opacity=0.8
+            opacity=0.75
 
         ),
     ),

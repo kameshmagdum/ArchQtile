@@ -23,8 +23,30 @@ paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertin
 paru -S papirus-icon-theme arc-gtk-theme --noconfirm
 
 #installing bluetooth
-paru -S bluez blueman --noconfirm
+paru -S bluez blueman alsa-utils --noconfirm
 sudo systemctl enable bluetooth.service
+
+#installing packages to support ntfs and external drives in thunar
+paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
+
+#installing additional apps
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui envycontrol preload tlp --noconfirm
+sudo systemctl enable tlp
+sudo systemctl enable preload
+
+#Installing rofi themes
+mkdir temp
+cd temp
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+cd ..
+cd ..
+sudo rm -rf temp
+
+#Installing lightdm themes
+paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 
 #cleanup
 sudo pacman -Scc
