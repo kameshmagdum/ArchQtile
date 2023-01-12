@@ -1,16 +1,16 @@
 #!/bin/bash
 
 echo "rsync starting..."
-rsync -avh ~/.config/qtile ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/rofi ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/Thunar ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/xfce4 ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/neofetch ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/mpd ~/OnePlace/dotfiles --delete
-rsync -avh ~/.config/alacritty ~/OnePlace/dotfiles --delete
-rsync -avh ~/automation ~/OnePlace/dotfiles --delete
+rsync -avh ~/.config/qtile ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/rofi ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/Thunar ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/xfce4 ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/neofetch ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/mpd ~/GIT/ArchQtileData --delete
+rsync -avh ~/.config/alacritty ~/GIT/ArchQtileData --delete
+rsync -avh ~/automation ~/GIT/ArchQtileData --delete
 
-cp ~/.bashrc ~/OnePlace/dotfiles/.bashrc
+cp ~/.bashrc ~/GIT/ArchQtileData/.bashrc
 
 date
 sleep 5
