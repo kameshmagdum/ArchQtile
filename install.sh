@@ -49,7 +49,7 @@ sudo rm -rf temp
 paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 
 #installing nvidia drivers
-paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt
+paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt --noconfirm
 
 #cleanup
 sudo pacman -Syu
