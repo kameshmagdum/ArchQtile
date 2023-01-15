@@ -307,6 +307,8 @@ screens = [
                     fontsize = 14,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[7],
+                    mouse_callbacks = {"Button1": lazy.spawn("alacritty -e " + os.path.expanduser('~') + "/automation/autocpufreq.sh")}
+                    
                 ),
                 widget.CPU(
                     font = "JetBrainsMono Nerd Font",

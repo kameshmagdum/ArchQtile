@@ -30,7 +30,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -75,6 +75,18 @@ betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
 
 #copying touchpad configs
 sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+#install auto-cpufreq
+mkdir temp
+cd temp
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
+cd ..
+cd ..
+sudo rm -rf temp
+sudo auto-cpufreq --install
+sudo cp etc/auto-cpufreq.conf /etc/auto-cpufreq.conf
+
 echo "System will reboot in 3 Sec..."
 sleep 3
 sudo reboot
