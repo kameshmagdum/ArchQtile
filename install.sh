@@ -30,7 +30,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui envycontrol preload tlp xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
