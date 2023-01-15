@@ -13,5 +13,5 @@ rsync -avh ~/automation ~/GIT/ArchQtileData --delete
 cp ~/.bashrc ~/GIT/ArchQtileData/.bashrc
 
 date
-sleep 5
 echo "rsync finished..."
+sleep 3

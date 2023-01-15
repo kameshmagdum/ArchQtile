@@ -3,10 +3,10 @@ SRL="$(echo -e "Shutdown\nReboot\nLogout\nCancel" | fzf --prompt=" Why u wanna l
 
 case $SRL in
     Shutdown) 
-        sudo /sbin/shutdown -h now
+        /sbin/shutdown -h now
         ;;
     Reboot)
-        sudo /sbin/reboot
+        /sbin/reboot
         ;;
     Logout)
         qtile cmd-obj -o cmd -f shutdown

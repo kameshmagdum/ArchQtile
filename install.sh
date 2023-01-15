@@ -30,7 +30,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui envycontrol preload tlp --noconfirm
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui envycontrol preload tlp xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -48,27 +48,33 @@ sudo rm -rf temp
 #Installing lightdm themes
 paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 
-#cleanup
-sudo pacman -Scc
-sudo pacman -Rns $(pacman -Qtdq)
-rm -rf ~/.cache/*
-paru -Scca
+#installing nvidia drivers
+paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt
 
-#coping concigs
+#cleanup
+sudo pacman -Syu
+sudo pacman -Rsn $(pacman -Qtdq)
+sudo pacman -Scc
+paru -Syu
+paru -Rns $(paru -Qtdq)
+paru --clean
+rm -rf ~/.cache/*
+
+#copying configs
 cp -r configs/* ~/.config
 chmod +x ~/.config/qtile/autostart.sh
 
-#setting lockscreen
-betterlockscreen -u ~/.config/qtile/forest.jpg --fx dim,pixel
-
 #copying other files
-rm -rf ~/.bashrc
 cp -r home/* ~/.
+cp home/.bashrc ~/.bashrc
 chmod +x ~/automation/*
-mkdir ~/OnePlace
 mkdir ~/OnePlace/Music
+
+#setting lockscreen
+betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
 
 #copying touchpad configs
 sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-
+echo "System will reboot in 3 Sec..."
+sleep 3
 sudo reboot

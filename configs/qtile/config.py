@@ -73,7 +73,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "a", lazy.spawn("/home/kamesh/.config/rofi/launchers/type-1/launcher.sh")),
+    Key([mod, "shift"], "a", lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-1/launcher.sh")),
     Key([mod, "shift"], "f", lazy.spawn("firefox")),
     Key([mod, "shift"], "e", lazy.spawn("thunar")),
     Key([mod, "shift"], "b", lazy.spawn("brave")),
@@ -135,10 +135,10 @@ foregroundColorTwo = "#44475a"
 # Define scratchpads
 groups.append(ScratchPad("scratchpad", [
     DropDown("term",terminal, width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
-    DropDown("exitmenu","alacritty -e /home/kamesh/automation/logout.sh", width=0.15, height=0.20, x=0.425, y=0.35, opacity=1),
-    DropDown("update","alacritty -e /home/kamesh/automation/updateSystem.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
-    DropDown("rsync","alacritty -e /home/kamesh/automation/rsync.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
-    DropDown("betterlock","alacritty -e /home/kamesh/automation/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
+    DropDown("exitmenu","alacritty -e" + os.path.expanduser('~') + "/automation/logout.sh", width=0.15, height=0.20, x=0.425, y=0.35, opacity=1),
+    DropDown("update","alacritty -e" + os.path.expanduser('~') + "/automation/updateSystem.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
+    DropDown("rsync","alacritty -e" + os.path.expanduser('~') + "/automation/rsync.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
+    DropDown("betterlock","alacritty -e" + os.path.expanduser('~') + "/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("htop","alacritty -e htop", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1)
 ]))
 
@@ -190,7 +190,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper='~/.config/qtile/forest.jpg',
+        wallpaper='~/OnePlace/wallpapers/wallpaper.jpg',
         wallpaper_mode='stretch',
         top=bar.Bar(
             [
@@ -203,6 +203,9 @@ screens = [
                     fontsize = 18,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[3],
+                    mouse_callbacks = {"Button1": lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-1/launcher.sh"), 
+                    "Button2": lazy.spawn("alacritty -e htop"), 
+                    "Button3": lazy.spawn(terminal)}
                 ),
                 widget.Sep(
                     linewidth = 0,
@@ -263,6 +266,7 @@ screens = [
                     fontsize = 14,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[9],
+                    mouse_callbacks = {"Button1": lazy.spawn("ymuse")}
                 ),
                 widget.Mpd2(
                     font = "JetBrainsMono Nerd Font",
@@ -377,6 +381,14 @@ screens = [
                     background = backgroundColor,
                     icon_size = 20,
                     padding =4,
+                ),
+                widget.Battery(
+                    font = "JetBrainsMono Nerd Font",
+                    foreground = '#378d5f',
+                    padding = 5,
+                    format = '{percent:2.0%}',
+                    update_interval = 10,
+                    show_short_text = False
                 ),
                 widget.CurrentLayoutIcon(
                     scale = 0.5,

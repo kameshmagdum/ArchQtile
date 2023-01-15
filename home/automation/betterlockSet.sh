@@ -1,2 +1,2 @@
 #!/bin/bash
-betterlockscreen -u ~/.config/qtile/forest.jpg --fx dim,pixel
+betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
