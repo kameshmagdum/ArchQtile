@@ -14,7 +14,7 @@ sudo rm -rf temp
 paru --noconfirm
 
 #installing apps
-paru -S neofetch timeshift thunar stacer firefox picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
+paru -S neofetch timeshift thunar stacer picom lxappearance rofi reflector xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
 
 #installing fonts
 paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu --noconfirm
@@ -30,7 +30,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload xfce4-notifyd xorg-xbacklight vlc cronie --noconfirm
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie --noconfirm
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -49,7 +49,9 @@ sudo rm -rf temp
 paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 
 #installing nvidia drivers
-paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt --noconfirm
+#paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt --noconfirm
+paru -S envycontrol --noconfirm
+sudo envycontrol -s integrated
 
 #cleanup
 sudo pacman -Syu
@@ -77,15 +79,15 @@ betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
 sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 #install auto-cpufreq
-mkdir temp
-cd temp
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
-cd ..
-cd ..
-sudo rm -rf temp
-sudo auto-cpufreq --install
-sudo cp etc/auto-cpufreq.conf /etc/auto-cpufreq.conf
+#mkdir temp
+#cd temp
+#git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+#cd auto-cpufreq && sudo ./auto-cpufreq-installer
+#cd ..
+#cd ..
+#sudo rm -rf temp
+#sudo auto-cpufreq --install
+#sudo cp etc/auto-cpufreq.conf /etc/auto-cpufreq.conf
 
 echo "System will reboot in 3 Sec..."
 sleep 3
