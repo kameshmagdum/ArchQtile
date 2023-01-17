@@ -1,20 +1,10 @@
 #!/bin/bash
-#installing paru
-sudo pacman -S --needed base-devel
-mkdir temp
-cd temp
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
-cd ..
-sudo rm -rf temp
-
-#updating using paru
-paru --noconfirm
+#installing reflector
+sudo pacman -S reflector --needed
+sudo reflector --verbose -l 20 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 #installing apps
-paru -S neofetch timeshift thunar stacer picom lxappearance rofi reflector xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
+paru -S neofetch thunar picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
 
 #installing fonts
 paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu --noconfirm
@@ -77,17 +67,6 @@ betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
 
 #copying touchpad configs
 sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-
-#install auto-cpufreq
-#mkdir temp
-#cd temp
-#git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-#cd auto-cpufreq && sudo ./auto-cpufreq-installer
-#cd ..
-#cd ..
-#sudo rm -rf temp
-#sudo auto-cpufreq --install
-#sudo cp etc/auto-cpufreq.conf /etc/auto-cpufreq.conf
 
 echo "System will reboot in 3 Sec..."
 sleep 3
