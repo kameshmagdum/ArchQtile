@@ -138,7 +138,7 @@ groups.append(ScratchPad("scratchpad", [
     DropDown("exitmenu","alacritty -e" + os.path.expanduser('~') + "/automation/logout.sh", width=0.15, height=0.20, x=0.425, y=0.35, opacity=1),
     DropDown("update","alacritty -e" + os.path.expanduser('~') + "/automation/updateSystem.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("rsync","alacritty -e" + os.path.expanduser('~') + "/automation/rsync.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
-    DropDown("betterlock","alacritty -e" + os.path.expanduser('~') + "/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
+    DropDown("betterlock","alacritty -e" + os.path.expanduser('~') + "/automation/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("htop","alacritty -e htop", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1)
 ]))
 
@@ -245,7 +245,7 @@ screens = [
                     borderwidth = 1,
                     border = colors[1],
                     margin = 0,
-                    padding = 10,
+                    padding = 7,
                     highlight_method = "block",
                     title_width_method = "uniform",
                     urgent_alert_method = "border",
@@ -306,9 +306,7 @@ screens = [
                     text = "",
                     fontsize = 14,
                     font = "JetBrainsMono Nerd Font",
-                    foreground = colors[7],
-                    mouse_callbacks = {"Button1": lazy.spawn("alacritty -e " + os.path.expanduser('~') + "/automation/autocpufreq.sh")}
-                    
+                    foreground = colors[7]                    
                 ),
                 widget.CPU(
                     font = "JetBrainsMono Nerd Font",
@@ -355,13 +353,29 @@ screens = [
                     padding = 10
                 ),
                 widget.TextBox(
+                    text = "龍",
+                    fontsize = 14,
+                    font = "JetBrainsMono Nerd Font",
+                    foreground = colors[3],
+                ),
+                widget.Net(
+                    font = "JetBrainsMono Nerd Font",
+                    foreground = foregroundColor,
+                    padding = 5,
+                    format='{down}   {up}'
+                ),
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 10
+                ),
+                widget.TextBox(
                     text = "",
                     fontsize = 14,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[10],
                 ),
                 widget.Clock(
-                    format='%I:%M %p',
+                    format='%a %d, %I:%M %p',
                     font = "JetBrainsMono Nerd Font",
                     padding = 10,
                     fontsize = 14,
@@ -388,9 +402,13 @@ screens = [
                     font = "JetBrainsMono Nerd Font",
                     foreground = '#378d5f',
                     padding = 5,
-                    format = '{percent:2.0%}',
-                    update_interval = 10,
-                    show_short_text = False
+                    format = '{percent:2.0%}{char}',
+                    update_interval = 3,
+                    show_short_text = False,
+                    charge_char = " ",
+                    discharge_char = "",
+                    full_char = "",
+                    mouse_callbacks = {"Button1": lazy.spawn("xfce4-power-manager-settings")}
                 ),
                 widget.CurrentLayoutIcon(
                     scale = 0.5,

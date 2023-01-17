@@ -14,6 +14,8 @@ echo "This script will update the official and AUR packages, remove unnecessary 
 echo "Creating Timeshift snapshot with comment 'Running System Update on $DATE'" | tee -a $LOG_FILE
 sudo timeshift --create --comment "Running System Update on $DATE" | tee -a $LOG_FILE
 
+sudo reflector --verbose -l 20 -p https --sort rate --save /etc/pacman.d/mirrorlist
+
 echo "Updating official packages" | tee -a $LOG_FILE
 sudo pacman -Syu | tee -a $LOG_FILE
 echo "Removing unnecessary packages" | tee -a $LOG_FILE
