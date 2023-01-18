@@ -73,8 +73,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "a", lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-1/launcher.sh")),
-    Key([mod, "shift"], "f", lazy.spawn("firefox")),
+    Key([mod], "a", lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-3/launcher.sh")),
+    Key([mod], "x", lazy.spawn(os.path.expanduser('~') + "/.config/rofi/powermenu/type-2/powermenu.sh")),
     Key([mod, "shift"], "e", lazy.spawn("thunar")),
     Key([mod, "shift"], "b", lazy.spawn("brave")),
     Key([mod, "shift"], "c", lazy.spawn("google-chrome-stable")),
@@ -135,7 +135,6 @@ foregroundColorTwo = "#44475a"
 # Define scratchpads
 groups.append(ScratchPad("scratchpad", [
     DropDown("term",terminal, width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
-    DropDown("exitmenu","alacritty -e" + os.path.expanduser('~') + "/automation/logout.sh", width=0.15, height=0.20, x=0.425, y=0.35, opacity=1),
     DropDown("update","alacritty -e" + os.path.expanduser('~') + "/automation/updateSystem.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("rsync","alacritty -e" + os.path.expanduser('~') + "/automation/rsync.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
     DropDown("betterlock","alacritty -e" + os.path.expanduser('~') + "/automation/betterlockSet.sh", width=0.6, height=0.6, x=0.2, y=0.2, opacity=1),
@@ -145,7 +144,6 @@ groups.append(ScratchPad("scratchpad", [
 # Scratchpad keybindings
 keys.extend([
     Key([mod], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
-    Key([mod], "x", lazy.group['scratchpad'].dropdown_toggle('exitmenu')),
     Key([mod], "u", lazy.group['scratchpad'].dropdown_toggle('update')),
     Key([mod], "r", lazy.group['scratchpad'].dropdown_toggle('rsync')),
     Key([mod, "shift"], "z", lazy.group['scratchpad'].dropdown_toggle('betterlock')),
@@ -203,9 +201,9 @@ screens = [
                     fontsize = 18,
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[3],
-                    mouse_callbacks = {"Button1": lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-1/launcher.sh"), 
-                    "Button2": lazy.spawn("alacritty -e htop"), 
-                    "Button3": lazy.spawn(terminal)}
+                    mouse_callbacks = {"Button1": lazy.spawn(os.path.expanduser('~') + "/.config/rofi/launchers/type-3/launcher.sh"), 
+                    "Button2": lazy.spawn(terminal), 
+                    "Button3": lazy.spawn(os.path.expanduser('~') + "/.config/rofi/powermenu/type-2/powermenu.sh")}
                 ),
                 widget.Sep(
                     linewidth = 0,
