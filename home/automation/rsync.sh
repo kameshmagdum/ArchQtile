@@ -1,16 +1,9 @@
 #!/bin/bash
 
 echo "rsync starting..."
-rsync -avh ~/.config/qtile ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/rofi ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/Thunar ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/xfce4 ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/neofetch ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/mpd ~/GIT/ArchQtileData --delete
-rsync -avh ~/.config/alacritty ~/GIT/ArchQtileData --delete
-rsync -avh ~/automation ~/GIT/ArchQtileData --delete
-
-cp ~/.bashrc ~/GIT/ArchQtileData/.bashrc
+rsync -avh ~/.config/qtile ~/Documents/GitHub/ArchQtile/configs --delete
+rsync -avh ~/automation ~/Documents/GitHub/ArchQtile/home --delete
+cp ~/.bashrc ~/Documents/GitHub/ArchQtile/home/.bashrc
 
 date
 echo "rsync finished..."

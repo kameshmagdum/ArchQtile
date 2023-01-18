@@ -1,26 +1,26 @@
 #!/bin/bash
 #installing reflector
 sudo pacman -S reflector --needed
-sudo reflector --verbose -l 20 -p https --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --verbose -l 30 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 #installing apps
-paru -S neofetch thunar picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen --noconfirm
+paru -S neofetch thunar picom lxappearance rofi xfce4-power-manager polkit-gnome python-psutil mpd python-mpd2 gnome-keyring fzf python-cairo betterlockscreen
 
 #installing fonts
-paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu --noconfirm
+paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu
 
 #installing icons and themes
-paru -S papirus-icon-theme arc-gtk-theme --noconfirm
+paru -S papirus-icon-theme arc-gtk-theme
 
 #installing bluetooth
-paru -S bluez blueman alsa-utils --noconfirm
+paru -S bluez blueman alsa-utils
 sudo systemctl enable bluetooth.service
 
 #installing packages to support ntfs and external drives in thunar
-paru -S ntfs-3g gvfs peazip-gtk2-bin --noconfirm
+paru -S ntfs-3g gvfs peazip-gtk2-bin
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie --noconfirm
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -36,11 +36,11 @@ cd ..
 sudo rm -rf temp
 
 #Installing lightdm themes
-paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
+paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether
 
 #installing nvidia drivers
-#paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt --noconfirm
-paru -S envycontrol --noconfirm
+#paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt
+paru -S envycontrol
 sudo envycontrol -s integrated
 
 #cleanup

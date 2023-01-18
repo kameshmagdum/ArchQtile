@@ -1,6 +1,6 @@
 #!/bin/bash
 #installing paru
-sudo pacman -S --needed base-devel
+sudo pacman -S --needed base-devel gnome-disk-utility
 mkdir temp
 cd temp
 git clone https://aur.archlinux.org/paru.git

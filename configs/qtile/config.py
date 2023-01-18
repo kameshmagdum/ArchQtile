@@ -308,6 +308,10 @@ screens = [
                     font = "JetBrainsMono Nerd Font",
                     foreground = colors[7]                    
                 ),
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 5
+                ),
                 widget.CPU(
                     font = "JetBrainsMono Nerd Font",
                     update_interval = 1.0,
@@ -347,22 +351,6 @@ screens = [
                     foreground = foregroundColor,
                     format = ' {r:.0f}%',
                     visible_on_warn = False,
-                ),
-                widget.Sep(
-                    linewidth = 0,
-                    padding = 10
-                ),
-                widget.TextBox(
-                    text = "龍",
-                    fontsize = 14,
-                    font = "JetBrainsMono Nerd Font",
-                    foreground = colors[3],
-                ),
-                widget.Net(
-                    font = "JetBrainsMono Nerd Font",
-                    foreground = foregroundColor,
-                    padding = 5,
-                    format='{down}   {up}'
                 ),
                 widget.Sep(
                     linewidth = 0,
