@@ -81,6 +81,7 @@ keys = [
     Key([mod, "shift"], "v", lazy.spawn("code")),
     Key([mod, "shift"], "g", lazy.spawn("github-desktop")),
     Key([mod], "z", lazy.spawn("betterlockscreen -l dim")),
+    Key([mod], "p", lazy.spawn("flameshot full")),
 
     #=-/ Multimedia keys /-=#
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
