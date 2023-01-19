@@ -127,7 +127,8 @@ colors = [["#282c34", "#282c34"],  #background (dark grey) [0]
 			   ['#ff6c6b', '#ff6c6b'],  #red [9]
 			   ["#ecbe7b", "#ecbe7b"]]  #yellow [10]
 			   
-backgroundColor = "#1E2029"
+#backgroundColor = "#1E2029"
+backgroundColor = "#00000000"
 foregroundColor = "#bbc2cf"
 workspaceColor = "#51afef"
 foregroundColorTwo = "#44475a"
@@ -248,16 +249,14 @@ screens = [
                     title_width_method = "uniform",
                     urgent_alert_method = "border",
                     urgent_border = colors[1],
-                    rounded = False,
+                    rounded = True,
                     txt_floating = "🗗 ",
                     txt_maximized = "🗖 ",
                     txt_minimized = "🗕 ",
                 ),
                 widget.Sep(
-                    linewidth = 1,
-                    padding = 20,
-                    foreground = colors[5],
-                    background = backgroundColor
+                    linewidth = 0,
+                    padding = 10
                 ),
                 widget.TextBox(
                     text = "",
@@ -274,12 +273,6 @@ screens = [
                     update_interval = 1,
                     padding = 10,
                 ),
-                widget.Sep(
-                    linewidth = 1,
-                    padding = 10,
-                    foreground = colors[5],
-                    background = backgroundColor
-                ),
                 widget.OpenWeather(
                     app_key = "7834197c2338888258f8cb94ae14ef49",
                     location = "Pune,IN",
@@ -289,12 +282,6 @@ screens = [
                     foreground = foregroundColor,
                     padding = 10,
                     update_interval = 600,
-                ),
-                widget.Sep(
-                    linewidth = 1,
-                    padding = 10,
-                    foreground = colors[5],
-                    background = backgroundColor
                 ),
                 widget.Sep(
                     linewidth = 0,
@@ -355,6 +342,22 @@ screens = [
                     padding = 10
                 ),
                 widget.TextBox(
+                    text = "",
+                    fontsize = 14,
+                    font = "JetBrainsMono Nerd Font",
+                    foreground = colors[7],
+                ),
+                widget.Volume(
+                    font = "JetBrainsMono Nerd Font",
+                    foreground = foregroundColor,
+                    padding = 5,
+                    step = 1
+                ),
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 10
+                ),
+                widget.TextBox(
                     text = "",
                     fontsize = 14,
                     font = "JetBrainsMono Nerd Font",
@@ -367,27 +370,16 @@ screens = [
                     fontsize = 14,
                     foreground = colors[9],
                 ),
-                widget.TextBox(
-                    text = "",
-                    fontsize = 14,
-                    font = "JetBrainsMono Nerd Font",
-                    foreground = colors[7],
-                ),
-                widget.Volume(
-                    font = "JetBrainsMono Nerd Font",
-                    foreground = foregroundColor,
-                    padding = 5,
-                    step = 1
-                ),
                 widget.Systray(
                     background = backgroundColor,
-                    icon_size = 20,
-                    padding =4,
+                    icon_size = 18,
+                    padding =5,
                 ),
                 widget.Battery(
                     font = "JetBrainsMono Nerd Font",
-                    foreground = '#378d5f',
-                    padding = 5,
+                    foreground = foregroundColor,
+                    padding = 4,
+                    fontsize = 12,
                     format = '{percent:2.0%}{char}',
                     update_interval = 3,
                     show_short_text = False,
@@ -403,10 +395,10 @@ screens = [
                 ),
 
             ],
-            size=30,
+            size=32,
             background=backgroundColor,
             margin=5, 
-            opacity=0.75
+            opacity=1
 
         ),
     ),
