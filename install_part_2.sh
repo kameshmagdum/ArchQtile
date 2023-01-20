@@ -20,7 +20,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie bcompare flameshot
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie bcompare flameshot rsync rclone --needed
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -67,6 +67,10 @@ betterlockscreen -u ~/OnePlace/wallpapers/wallpaper.jpg --fx dim,pixel
 
 #copying touchpad configs
 sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+#copying cursur & theme
+sudo cp -r usr_share_icons/* /usr/share/icons
+sudo cp -r usr_share_themes/* /usr/share/themes
 
 echo "System will reboot in 3 Sec..."
 sleep 3
