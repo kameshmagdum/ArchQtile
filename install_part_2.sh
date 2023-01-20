@@ -72,6 +72,9 @@ sudo cp etc_X11_xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.co
 sudo cp -r usr_share_icons/* /usr/share/icons
 sudo cp -r usr_share_themes/* /usr/share/themes
 
+#adding wallpaper to lightdm theme
+sudo cp -r ~/OnePlace/wallpapers/* /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers
+
 echo "System will reboot in 3 Sec..."
 sleep 3
 sudo reboot
