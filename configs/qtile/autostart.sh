@@ -7,5 +7,6 @@ blueman-applet &
 
 #start mpd
 [ ! -s ~/.config/mpd/pid ] && mpd &
+mpDris2 &
 
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
