@@ -10,7 +10,7 @@ paru -S neofetch thunar picom lxappearance rofi xfce4-power-manager polkit-gnome
 paru -S nerd-fonts-jetbrains-mono noto-fonts noto-fonts-emoji ttf-linux-libertine ttf-dejavu
 
 #installing icons and themes
-paru -S papirus-icon-theme arc-gtk-theme
+paru -S papirus-icon-theme
 
 #installing bluetooth
 paru -S bluez blueman alsa-utils
@@ -20,26 +20,14 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie bcompare flameshot rsync rclone playerctl mpdris2 pavucontrol-git gwenview qt5-styleplugins --needed
+paru -S code ymuse google-chrome github-desktop-bin brave preload tlp xfce4-notifyd vlc cronie bcompare flameshot rsync rclone playerctl mpdris2 pavucontrol-git gwenview qt5-styleplugins --needed
 sudo systemctl enable tlp
 sudo systemctl enable preload
-
-#Installing rofi themes
-mkdir temp
-cd temp
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
-./setup.sh
-cd ..
-cd ..
-sudo rm -rf temp
 
 #Installing lightdm themes
 paru -S lightdm-webkit2-greeter lightdm-webkit-theme-aether
 
-#installing nvidia drivers
-#paru -S linux-headers nvidia-470xx-dkms nvidia-470xx-settings optimus-manager optimus-manager-qt
+#installing envycontrol
 paru -S envycontrol
 sudo envycontrol -s integrated
 

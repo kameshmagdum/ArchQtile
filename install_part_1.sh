@@ -11,10 +11,10 @@ cd ..
 sudo rm -rf temp
 
 #updating using paru
-paru -Syu --noconfirm
+paru -Syu
 
 #installing timeshift
-paru -S timeshift stacer --noconfirm
+paru -S timeshift stacer
 
 #updating the system
 sudo pacman -Syu
