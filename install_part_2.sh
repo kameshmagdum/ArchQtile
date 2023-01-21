@@ -20,7 +20,7 @@ sudo systemctl enable bluetooth.service
 paru -S ntfs-3g gvfs peazip-gtk2-bin
 
 #installing additional apps
-paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie bcompare flameshot rsync rclone playerctl mpdris2 pavucontrol-git --needed
+paru -S code ymuse google-chrome github-desktop-bin brave quickemu quickgui preload tlp xfce4-notifyd vlc cronie bcompare flameshot rsync rclone playerctl mpdris2 pavucontrol-git gwenview qt5-styleplugins --needed
 sudo systemctl enable tlp
 sudo systemctl enable preload
 
@@ -74,6 +74,10 @@ sudo cp -r usr_share_themes/* /usr/share/themes
 
 #adding wallpaper to lightdm theme
 sudo cp -r ~/OnePlace/wallpapers/* /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers
+
+sudo cp /etc/environment /etc/environment_backup
+echo "XDG_CURRENT_DESKTOP=Unity" | sudo tee -a /etc/environment
+echo "QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 echo "System will reboot in 3 Sec..."
 sleep 3
