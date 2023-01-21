@@ -1,0 +1,2 @@
+@hourly ~/automation/gsync.sh
+@hourly ~/automation/rsync.sh>rsync.log
